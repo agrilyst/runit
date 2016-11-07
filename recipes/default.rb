@@ -29,15 +29,6 @@ end
 case node['platform_family']
 when 'rhel', 'fedora'
 
-  # add the necessary repos unless prefer_local_yum is set
-  unless node['runit']['prefer_local_yum']
-    include_recipe 'yum-epel' if node['platform_version'].to_i < 7
-
-    packagecloud_repo 'imeyer/runit' do
-      force_os 'rhel' if node['platform'].eql?('oracle')
-    end
-  end
-
   package 'runit'
 
   service 'runsvdir-start' do

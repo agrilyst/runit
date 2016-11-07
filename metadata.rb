@@ -12,9 +12,6 @@ recipe 'runit', 'Installs and configures runit'
   supports os
 end
 
-depends 'packagecloud'
-depends 'yum-epel'
-
 source_url 'https://github.com/chef-cookbooks/runit'
 issues_url 'https://github.com/chef-cookbooks/runit/issues'
 
